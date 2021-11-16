@@ -18,6 +18,7 @@ tab = browser.new_tab()
 tab.start()
 tab.call_method("Network.enable")
 tab.call_method("Network.clearBrowserCache")
+tab.call_method("Page.navigate", url=" http://tensor.ru/", _timeout=5) 
 
 time.sleep(5)
 

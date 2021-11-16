@@ -13,10 +13,13 @@ subprocess.Popen("C:\Program Files\Google\Chrome\Application\chrome.exe --remote
 time.sleep(5)
 
 browser = pychrome.Browser(url='http://127.0.0.1:9222')
-
 tab = browser.new_tab()
-time.sleep(2)
+
 tab.start()
+tab.call_method("Network.enable")
+tab.call_method("Network.clearBrowserCache")
+
+time.sleep(5)
 
 tab.stop()
 browser.close_tab(tab)   

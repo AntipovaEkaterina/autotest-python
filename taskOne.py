@@ -29,7 +29,7 @@ tab.wait(20)
 tab.Runtime.enable() 
 scriptId = tab.Runtime.compileScript(expression=metrics, sourceURL="http://tensor.ru/", persistScript=True)
 timing_data = json.loads(tab.Runtime.runScript(scriptId=scriptId["scriptId"])["result"]["value"])
-print(timing_data)
+# print(timing_data)
 
 timings = {}
 timings["severConnectTime"] = timing_data["connectEnd"] - timing_data["connectStart"]
@@ -40,6 +40,7 @@ timings["interactive"] = timing_data["domInteractive"] - timing_data["domLoading
 timings["contentLoadedEvent"] = timing_data["domContentLoadedEventEnd"] - timing_data["domContentLoadedEventStart"]
 timings["processingToInteractive"] = timing_data["domInteractive"] - timing_data["domLoading"]
 
+print(timings)
 
 tab.wait(2)
 tab.stop()

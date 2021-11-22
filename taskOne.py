@@ -36,7 +36,6 @@ timings["severConnectTime"] = timing_data["connectEnd"] - timing_data["connectSt
 timings["pageLoadTime"] = timing_data["loadEventEnd"] - timing_data["navigationStart"]
 timings["renderTime"] = timing_data["domComplete"] - timing_data["domLoading"]
 timings["domainLookup"] = timing_data["domainLookupEnd"] - timing_data["domainLookupStart"]
-timings["interactive"] = timing_data["domInteractive"] - timing_data["domLoading"]
 timings["contentLoadedEvent"] = timing_data["domContentLoadedEventEnd"] - timing_data["domContentLoadedEventStart"]
 timings["processingToInteractive"] = timing_data["domInteractive"] - timing_data["domLoading"]
 

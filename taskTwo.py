@@ -51,7 +51,7 @@ tab.start()
 
 tab.Network.enable()
 tab.Network.clearBrowserCache()
-tab.call_method("Page.navigate", url="https://online.sbis.ru/auth/?ret=%2Fauth", _timeout=5) 
+tab.Page.navigate(url="https://online.sbis.ru/auth/?ret=%2Fauth", _timeout=10)
 tab.wait(5)
 
 findField(selector=SEARCH_DEMO)
@@ -76,7 +76,6 @@ timings["pageLoadTime"] = timing_data["loadEventEnd"] - timing_data["navigationS
 timings["gettingAByte"] = timing_data["responseEnd"] - timing_data["requestStart"]
 timings["renderTime"] = timing_data["domComplete"] - timing_data["domLoading"]
 timings["domainLookup"] = timing_data["domainLookupEnd"] - timing_data["domainLookupStart"]
-timings["interactive"] = timing_data["domInteractive"] - timing_data["domLoading"]
 timings["contentLoadedEvent"] = timing_data["domContentLoadedEventEnd"] - timing_data["domContentLoadedEventStart"]
 timings["processingToInteractive"] = timing_data["domInteractive"] - timing_data["domLoading"]
 
